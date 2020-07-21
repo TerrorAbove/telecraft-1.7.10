@@ -1,0 +1,5 @@
+1496024704854	Delete element
+1496133539429	Rename local variable 'BANNED_WORDS'
+1496133582175	Rename local variable 'BANNED_EXPRESSIONS'
+1496133590198	Rename local variable 'ALLOWED_SPECIAL_CHARS'
+1496133611737	Rename local variable 'allowed_special_chars'

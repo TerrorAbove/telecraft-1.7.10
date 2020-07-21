@@ -1,0 +1,43 @@
+[16:48:01] [main/INFO]: Setting user: Player824
+[16:48:04] [Client thread/INFO]: LWJGL Version: 2.9.1
+[16:48:12] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Teleport Craft
+[16:48:14] [Sound Library Loader/INFO]: Sound engine started
+[16:48:16] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[16:48:16] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[16:48:16] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:TeleCraft
+[16:48:17] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[16:48:17] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[16:48:18] [Sound Library Loader/INFO]: Sound engine started
+[16:48:25] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[16:48:25] [Server thread/INFO]: Generating keypair
+[16:48:26] [Server thread/INFO]: Preparing start region for level 0
+[16:48:27] [Server thread/INFO]: Preparing spawn area: 25%
+[16:48:28] [Server thread/INFO]: Preparing spawn area: 95%
+[16:48:28] [Server thread/INFO]: Changing view distance to 8, from 10
+[16:48:30] [Server thread/INFO]: Player824[local:E:c69e0931] logged in with entity id 244 at (214.29667144959907, 63.0, 263.9231379033431)
+[16:48:30] [Server thread/INFO]: Player824 joined the game
+[16:48:32] [Server thread/INFO]: Saving and pausing game...
+[16:48:33] [Server thread/INFO]: Saving chunks for level 'Debug world'/Overworld
+[16:48:33] [Server thread/INFO]: Saving chunks for level 'Debug world'/Nether
+[16:48:33] [Server thread/INFO]: Saving chunks for level 'Debug world'/The End
+[16:48:35] [Server thread/INFO]: Saving and pausing game...
+[16:48:35] [Server thread/INFO]: Saving chunks for level 'Debug world'/Overworld
+[16:48:35] [Server thread/INFO]: Saving chunks for level 'Debug world'/Nether
+[16:48:35] [Server thread/INFO]: Saving chunks for level 'Debug world'/The End
+[16:48:40] [Server thread/INFO]: Saving and pausing game...
+[16:48:41] [Server thread/INFO]: Saving chunks for level 'Debug world'/Overworld
+[16:48:41] [Server thread/INFO]: Saving chunks for level 'Debug world'/Nether
+[16:48:41] [Server thread/INFO]: Saving chunks for level 'Debug world'/The End
+[16:49:11] [Server thread/INFO]: Saving and pausing game...
+[16:49:11] [Server thread/INFO]: Saving chunks for level 'Debug world'/Overworld
+[16:49:11] [Server thread/INFO]: Saving chunks for level 'Debug world'/Nether
+[16:49:11] [Server thread/INFO]: Saving chunks for level 'Debug world'/The End
+[16:49:21] [Server thread/INFO]: Stopping server
+[16:49:21] [Server thread/INFO]: Saving players
+[16:49:21] [Server thread/INFO]: Saving worlds
+[16:49:21] [Server thread/INFO]: Saving chunks for level 'Debug world'/Overworld
+[16:49:21] [Server thread/INFO]: Saving chunks for level 'Debug world'/Nether
+[16:49:21] [Server thread/INFO]: Saving chunks for level 'Debug world'/The End
+[16:49:23] [Client thread/INFO]: Stopping!
+[17:00:32] [main/INFO]: Setting user: Player203
+[17:00:37] [Client thread/INFO]: LWJGL Version: 2.9.1

@@ -1,0 +1,47 @@
+[12:21:18] [main/INFO]: Setting user: Player356
+[12:21:19] [Client thread/INFO]: LWJGL Version: 2.9.1
+[12:21:24] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Teleport Craft
+[12:21:25] [Sound Library Loader/INFO]: Sound engine started
+[12:21:29] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[12:21:29] [Client thread/INFO]: Created: 512x512 textures/items-atlas
+[12:21:29] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:TeleCraft
+[12:21:30] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[12:21:30] [Client thread/INFO]: Created: 512x512 textures/items-atlas
+[12:21:30] [Sound Library Loader/INFO]: Sound engine started
+[12:21:35] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[12:21:35] [Server thread/INFO]: Generating keypair
+[12:21:35] [Server thread/INFO]: Preparing start region for level 0
+[12:21:36] [Server thread/INFO]: Changing view distance to 8, from 10
+[12:21:37] [Server thread/INFO]: Player356[local:E:04c4d39b] logged in with entity id 239 at (323.7339160882108, 74.0, 151.55039085573247)
+[12:21:37] [Server thread/INFO]: Player356 joined the game
+[12:21:47] [Server thread/INFO]: Player356 has just earned the achievement [Taking Inventory]
+[12:21:47] [Client thread/INFO]: [CHAT] Player356 has just earned the achievement [Taking Inventory]
+[12:22:00] [Server thread/INFO]: [Player356: Set game difficulty to Hard]
+[12:22:00] [Client thread/INFO]: [CHAT] Set game difficulty to Hard
+[12:22:18] [Server thread/INFO]: [Player356: Set own game mode to Creative Mode]
+[12:22:18] [Client thread/INFO]: [CHAT] Your game mode has been updated
+[12:22:39] [Server thread/INFO]: [Player356: Set own game mode to Survival Mode]
+[12:22:39] [Client thread/INFO]: [CHAT] Your game mode has been updated
+[12:22:47] [Server thread/INFO]: Player356 was shot by Skeleton
+[12:22:47] [Client thread/INFO]: [CHAT] Player356 was shot by Skeleton
+[12:22:54] [Server thread/INFO]: [Player356: Set own game mode to Creative Mode]
+[12:22:54] [Client thread/INFO]: [CHAT] Your game mode has been updated
+[12:22:57] [Server thread/INFO]: [Player356: Set game difficulty to Easy]
+[12:22:57] [Client thread/INFO]: [CHAT] Set game difficulty to Easy
+[12:23:16] [Server thread/INFO]: [Player356: Set own game mode to Survival Mode]
+[12:23:16] [Client thread/INFO]: [CHAT] Your game mode has been updated
+[12:24:06] [Server thread/INFO]: Saving and pausing game...
+[12:24:06] [Server thread/INFO]: Saving chunks for level 'Debug world'/Overworld
+[12:24:06] [Server thread/INFO]: Saving chunks for level 'Debug world'/Nether
+[12:24:06] [Server thread/INFO]: Saving chunks for level 'Debug world'/The End
+[12:25:09] [Server thread/INFO]: Saving and pausing game...
+[12:25:09] [Server thread/INFO]: Saving chunks for level 'Debug world'/Overworld
+[12:25:10] [Server thread/INFO]: Saving chunks for level 'Debug world'/Nether
+[12:25:10] [Server thread/INFO]: Saving chunks for level 'Debug world'/The End
+[12:25:10] [Server thread/INFO]: Stopping server
+[12:25:10] [Server thread/INFO]: Saving players
+[12:25:10] [Server thread/INFO]: Saving worlds
+[12:25:10] [Server thread/INFO]: Saving chunks for level 'Debug world'/Overworld
+[12:25:10] [Server thread/INFO]: Saving chunks for level 'Debug world'/Nether
+[12:25:10] [Server thread/INFO]: Saving chunks for level 'Debug world'/The End
+[12:25:11] [Client thread/INFO]: Stopping!

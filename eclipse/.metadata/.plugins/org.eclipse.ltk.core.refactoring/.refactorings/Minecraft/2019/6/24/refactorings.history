@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;direction&apos; in &apos;com.teleCraftMod.event.LivingHurtHandler.onLivingHurtEvent(...)&apos; to &apos;yaw_dir&apos;&#x0D;&#x0A;- Original project: &apos;Minecraft&apos;&#x0D;&#x0A;- Original element: &apos;com.teleCraftMod.event.LivingHurtHandler.onLivingHurtEvent(LivingHurtEvent).direction&apos;&#x0D;&#x0A;- Renamed element: &apos;direction&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;direction&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/main\/java&lt;com.teleCraftMod.event{LivingHurtHandler.java[LivingHurtHandler~onLivingHurtEvent~QLivingHurtEvent;@direction!7714!7853!7719!7727!QVec3;!0!false" name="yaw_dir" references="true" stamp="1560185133832" version="1.0"/>
+</session>

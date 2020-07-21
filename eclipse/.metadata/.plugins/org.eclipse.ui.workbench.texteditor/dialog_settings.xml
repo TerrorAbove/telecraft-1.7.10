@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="376" key="DIALOG_Y_ORIGIN"/>
+		<item value="409" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="Config" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="config"/>
+			<item value="wrapper"/>
+			<item value="EntityGrappleHook"/>
+			<item value="entity"/>
+			<item value="proxy"/>
+			<item value="CustomShapelessRecipe"/>
+			<item value="recipe"/>
+			<item value="craft"/>
+		</list>
+		<list key="replacehistory">
+			<item value="held"/>
+			<item value="someStack"/>
+			<item value="packet.Z"/>
+			<item value="packet.X"/>
+			<item value="block"/>
+			<item value="z"/>
+			<item value="y"/>
+			<item value="x"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="257" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="381" key="DIALOG_HEIGHT"/>
+		<item value="255" key="DIALOG_Y_ORIGIN"/>
+		<item value="1242" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>
