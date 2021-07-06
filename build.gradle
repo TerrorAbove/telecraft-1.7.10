@@ -1,20 +1,34 @@
 buildscript {
+	repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
     dependencies {
-	classpath fileTree(include: ['**/*.jar'], dir: 'C:/Users/admin/.gradle/caches/modules-2/files-2.1')
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    }
+    //dependencies {
+	//classpath fileTree(include: ['**/*.jar'], dir: 'C:/Users/David/.gradle/caches/modules-2/files-2.1')
 		
 	//Success! Yay! The local gradle cache had everything we needed all along...
 	//We can use --offline mode from now on
-    }
+    //}
 }
 
 apply plugin: 'forge'
 
-version = "1.5.0"
+version = "1.5.1"
 group= "com.terrorAndBlue.TeleCraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "TeleCraft"
 
 minecraft {
-    version = "1.7.10-10.13.2.1230"
+    version = "1.7.10-10.13.4.1558-1.7.10"
     runDir = "eclipse"
 }
 

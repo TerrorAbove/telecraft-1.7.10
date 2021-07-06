@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
-		<item value="376" key="DIALOG_Y_ORIGIN"/>
-		<item value="409" key="DIALOG_X_ORIGIN"/>
+		<item key="DIALOG_Y_ORIGIN" value="376"/>
+		<item key="DIALOG_X_ORIGIN" value="409"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="false" key="isRegEx"/>
-		<item value="Config" key="selection"/>
-		<item value="false" key="casesensitive"/>
-		<item value="false" key="incremental"/>
-		<item value="true" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="bladeOfTeleportation"/>
+		<item key="casesensitive" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="wrap" value="true"/>
+		<item key="wholeword" value="false"/>
 		<list key="findhistory">
+			<item value="bladeOfTeleportation"/>
+			<item value="grapple"/>
+			<item value="render"/>
+			<item value="grap"/>
+			<item value="entity"/>
+			<item value="handler"/>
+			<item value="iron_nugget"/>
+			<item value="toolmaterial"/>
+			<item value="onEaten"/>
 			<item value="config"/>
 			<item value="wrapper"/>
 			<item value="EntityGrappleHook"/>
-			<item value="entity"/>
 			<item value="proxy"/>
 			<item value="CustomShapelessRecipe"/>
 			<item value="recipe"/>
-			<item value="craft"/>
 		</list>
 		<list key="replacehistory">
 			<item value="held"/>
@@ -33,10 +40,10 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="257" key="DIALOG_WIDTH"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="381" key="DIALOG_HEIGHT"/>
-		<item value="255" key="DIALOG_Y_ORIGIN"/>
-		<item value="1242" key="DIALOG_X_ORIGIN"/>
+		<item key="DIALOG_WIDTH" value="257"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		<item key="DIALOG_HEIGHT" value="381"/>
+		<item key="DIALOG_Y_ORIGIN" value="390"/>
+		<item key="DIALOG_X_ORIGIN" value="1288"/>
 	</section>
 </section>

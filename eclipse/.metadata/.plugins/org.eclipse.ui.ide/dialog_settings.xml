@@ -5,13 +5,14 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"
+			key="NewWizardSelectionPage.STORE_SELECTED_ID" />
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jdt.ui.java" />
 		</list>
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">
-		<item value="338" key="DIALOG_X_ORIGIN"/>
-		<item value="313" key="DIALOG_Y_ORIGIN"/>
+		<item value="338" key="DIALOG_X_ORIGIN" />
+		<item value="313" key="DIALOG_Y_ORIGIN" />
 	</section>
 </section>

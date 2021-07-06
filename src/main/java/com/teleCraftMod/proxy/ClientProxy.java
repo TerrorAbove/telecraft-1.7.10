@@ -17,7 +17,7 @@ public class ClientProxy extends CommonProxy implements Handleable
 {
 	public void handlePreInit()
 	{
-		RenderingRegistry.registerEntityRenderingHandler(ZombieMinion.class, new RenderZombieMinion(new ModelZombie(), 0.5f));
+		//RenderingRegistry.registerEntityRenderingHandler(ZombieMinion.class, new RenderZombieMinion(new ModelZombie(), 0.5f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrappleHook.class, new RenderGrapple());
 	}
 	

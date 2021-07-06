@@ -48,7 +48,7 @@ public class LivingHurtHandler extends CustomArmorEventHandler
 		{
 			EntityPlayer player = (EntityPlayer)event.entityLiving;
 			
-			if(event.source.getSourceOfDamage() instanceof EntityMob)
+			/*if(event.source.getSourceOfDamage() instanceof EntityMob)
 			{
 				if(isWearingEquipment(player, TeleCraft.armorOfFortitude, CHEST) && event.ammount > 0)
 				{
@@ -76,79 +76,79 @@ public class LivingHurtHandler extends CustomArmorEventHandler
 					
 					event.ammount = (float)damage;
 				}
-			}
-			if(BladeOfTeleportation.canTeleportAttacker(player))
-			{
-				Entity attacker = event.source.getEntity();
-				if(attacker != null && attacker instanceof EntityLivingBase)
-				{
-					EntityLivingBase elb = (EntityLivingBase)attacker;
-					
-					boolean foundLocation = false;
-					
-					double newX = 0, newY = 0, newZ = 0;
-					double DIST = 0;
-					
-					int tries = 0;
-					
-					do
-					{
-						double angle = Math.random() * Math.PI * 2;
-						double distance = 25 + Math.random()*20;
-						Vec3 offset = Vec3.createVectorHelper(distance * Math.cos(angle), -5, distance * Math.sin(angle));
-						
-						newX = player.posX + offset.xCoord;
-						newY = player.posY + offset.yCoord;
-						newZ = player.posZ + offset.zCoord;
-						
-						int entityHeight = elb instanceof EntityEnderman ? 3 : 2;
-						
-						Block block0 = attacker.worldObj.getBlock((int)newX, (int)newY, (int)newZ);
-						
-						int max = 15;
-						while(max-- > 0 && !foundLocation)
-						{
-							if(block0.getMaterial().isSolid() || block0.getMaterial() == Material.water
-									|| (attacker.worldObj.provider.isHellWorld && block0.getMaterial() == Material.lava) && !(attacker instanceof EntityPlayer))
-							{
-								boolean isAir = true;
-								for(int i = 0; i < entityHeight; i++)
-								{
-									Material mat = attacker.worldObj.getBlock((int)newX, (int)newY+i+1, (int)newZ).getMaterial();
-									isAir = isAir && (i == entityHeight-1 ? mat == Material.air : !mat.isSolid());
-								}
-								if(isAir)
-								{
-									foundLocation = true;
-								}
-							}
-							block0 = attacker.worldObj.getBlock((int)newX, (int)++newY, (int)newZ);
-						}
-						
-						DIST = Math.sqrt(Math.pow(newX - elb.posX, 2) + Math.pow(newY - elb.posY, 2) + Math.pow(newZ - elb.posZ, 2));
-						
-						if(foundLocation)
-						{
-							elb.setPositionAndUpdate(newX, newY, newZ);
-							
-							if(player.getHeldItem() != null)
-							{
-								player.heal(1 + (int)(Math.random()*3));
-								player.getHeldItem().damageItem((int)(-DIST / 4), elb);
-							}
-							
-							/*if(player instanceof EntityPlayerMP)
-							{
-								//TODO this will be removed in a future update
-								((EntityPlayerMP)player).addChatMessage(new ChatComponentText("Your blade's defensive magic teleports your attacker "+(int)(DIST+0.5)+" blocks away."));
-							}*/
-						}
-						
-						tries++;
-					}
-					while(!foundLocation && tries < 10);
-				}
-			}
+			}*/
+//			if(BladeOfTeleportation.canTeleportAttacker(player))
+//			{
+//				Entity attacker = event.source.getEntity();
+//				if(attacker != null && attacker instanceof EntityLivingBase)
+//				{
+//					EntityLivingBase elb = (EntityLivingBase)attacker;
+//					
+//					boolean foundLocation = false;
+//					
+//					double newX = 0, newY = 0, newZ = 0;
+//					double DIST = 0;
+//					
+//					int tries = 0;
+//					
+//					do
+//					{
+//						double angle = Math.random() * Math.PI * 2;
+//						double distance = 25 + Math.random()*20;
+//						Vec3 offset = Vec3.createVectorHelper(distance * Math.cos(angle), -5, distance * Math.sin(angle));
+//						
+//						newX = player.posX + offset.xCoord;
+//						newY = player.posY + offset.yCoord;
+//						newZ = player.posZ + offset.zCoord;
+//						
+//						int entityHeight = elb instanceof EntityEnderman ? 3 : 2;
+//						
+//						Block block0 = attacker.worldObj.getBlock((int)newX, (int)newY, (int)newZ);
+//						
+//						int max = 15;
+//						while(max-- > 0 && !foundLocation)
+//						{
+//							if(block0.getMaterial().isSolid() || block0.getMaterial() == Material.water
+//									|| (attacker.worldObj.provider.isHellWorld && block0.getMaterial() == Material.lava) && !(attacker instanceof EntityPlayer))
+//							{
+//								boolean isAir = true;
+//								for(int i = 0; i < entityHeight; i++)
+//								{
+//									Material mat = attacker.worldObj.getBlock((int)newX, (int)newY+i+1, (int)newZ).getMaterial();
+//									isAir = isAir && (i == entityHeight-1 ? mat == Material.air : !mat.isSolid());
+//								}
+//								if(isAir)
+//								{
+//									foundLocation = true;
+//								}
+//							}
+//							block0 = attacker.worldObj.getBlock((int)newX, (int)++newY, (int)newZ);
+//						}
+//						
+//						DIST = Math.sqrt(Math.pow(newX - elb.posX, 2) + Math.pow(newY - elb.posY, 2) + Math.pow(newZ - elb.posZ, 2));
+//						
+//						if(foundLocation)
+//						{
+//							elb.setPositionAndUpdate(newX, newY, newZ);
+//							
+//							if(player.getHeldItem() != null)
+//							{
+//								player.heal(1 + (int)(Math.random()*3));
+//								player.getHeldItem().damageItem((int)(-DIST / 4), elb);
+//							}
+//							
+//							/*if(player instanceof EntityPlayerMP)
+//							{
+//								//TODO this will be removed in a future update
+//								((EntityPlayerMP)player).addChatMessage(new ChatComponentText("Your blade's defensive magic teleports your attacker "+(int)(DIST+0.5)+" blocks away."));
+//							}*/
+//						}
+//						
+//						tries++;
+//					}
+//					while(!foundLocation && tries < 10);
+//				}
+//			}
 		}
 		else
 		{
@@ -168,77 +168,75 @@ public class LivingHurtHandler extends CustomArmorEventHandler
 							{
 								if(elb.getEntityId() == comp.getInteger("last_target_id"))
 								{
-									//TODO testing... we may have to check more here
 									if(event.ammount >= elb.getHealth())
 									{
 										//give back most of charges... sets cooldown to 1
-										comp.setLong("last_off_teleport", System.currentTimeMillis() - 9000);
-										stack.setTagCompound(comp);
-										
-										//TODO EXPERIMENTAL
-										
-										int max_dist = BladeOfTeleportation.getMaxOffDistForStack(stack);
-										
-										AxisAlignedBB box = AxisAlignedBB.getBoundingBox(player.posX - max_dist, player.posY - max_dist, player.posZ - max_dist, player.posX + max_dist, player.posY + max_dist, player.posZ + max_dist);
-										List list = player.worldObj.getEntitiesWithinAABBExcludingEntity(player, box);
-										
-										Iterator<Object> iter = list.iterator();
-										
-										while(iter.hasNext())
-										{
-											Object o = iter.next();
-											
-											if(o instanceof EntityPlayer)
-											{
-												if(!player.canAttackPlayer((EntityPlayer)o))
-												{
-													iter.remove();
-													continue;
-												}
-											}
-											if(o instanceof EntityLivingBase)
-											{
-												EntityLivingBase elb2 = (EntityLivingBase)o;
-												
-												if(player.getDistanceToEntity(elb2) > max_dist)
-												{
-													iter.remove();
-												}
-												else if(!player.canEntityBeSeen(elb2))
-												{
-													iter.remove();
-												}
-												else if(elb instanceof EntityPlayer && !(elb2 instanceof EntityPlayer))
-												{
-													iter.remove();
-												}
-												else if(elb instanceof EntityMob && !(elb2 instanceof EntityMob))
-												{
-													iter.remove();
-												}
-											}
-											else
-											{
-												iter.remove();
-											}
-										}
-										
-										Object o = list.get((int)(Math.random() * list.size()));
-										
-										if(o instanceof EntityLivingBase)//mostly for null-check
-										{
-											EntityLivingBase randomEntity = (EntityLivingBase)o;
-											
-											Vec3 direction = Vec3.createVectorHelper(player.posX - randomEntity.posX, player.posY - randomEntity.posY, player.posZ - randomEntity.posZ);
-											direction = direction.normalize();
-											
-											float yaw = 180F * (float)((direction.xCoord != 0 ? Math.atan(direction.zCoord / direction.xCoord) : 0) / Math.PI);
-											float pitch = (float)direction.yCoord * 90F;
-											
-											//TODO fix
-											
-											player.setLocationAndAngles(player.posX, player.posY, player.posZ, yaw, pitch);
-										}
+										BladeOfTeleportation.setCooldownForStack(stack, 1);
+
+										//EXPERIMENTAL
+
+//										int max_dist = BladeOfTeleportation.getMaxOffDistForStack(stack);
+//
+//										AxisAlignedBB box = AxisAlignedBB.getBoundingBox(player.posX - max_dist, player.posY - max_dist, player.posZ - max_dist, player.posX + max_dist, player.posY + max_dist, player.posZ + max_dist);
+//										List list = player.worldObj.getEntitiesWithinAABBExcludingEntity(player, box);
+//
+//										Iterator<Object> iter = list.iterator();
+//
+//										while(iter.hasNext())
+//										{
+//											Object o = iter.next();
+//
+//											if(o instanceof EntityPlayer)
+//											{
+//												if(!player.canAttackPlayer((EntityPlayer)o))
+//												{
+//													iter.remove();
+//													continue;
+//												}
+//											}
+//											if(o instanceof EntityLivingBase)
+//											{
+//												EntityLivingBase elb2 = (EntityLivingBase)o;
+//
+//												if(player.getDistanceToEntity(elb2) > max_dist)
+//												{
+//													iter.remove();
+//												}
+//												else if(!player.canEntityBeSeen(elb2))
+//												{
+//													iter.remove();
+//												}
+//												else if(elb instanceof EntityPlayer && !(elb2 instanceof EntityPlayer))
+//												{
+//													iter.remove();
+//												}
+//												else if(elb instanceof EntityMob && !(elb2 instanceof EntityMob))
+//												{
+//													iter.remove();
+//												}
+//											}
+//											else
+//											{
+//												iter.remove();
+//											}
+//										}
+//
+//										Object o = list.get((int)(Math.random() * list.size()));
+//
+//										if(o instanceof EntityLivingBase)//mostly for null-check
+//										{
+//											EntityLivingBase randomEntity = (EntityLivingBase)o;
+//
+//											Vec3 direction = Vec3.createVectorHelper(player.posX - randomEntity.posX, player.posY - randomEntity.posY, player.posZ - randomEntity.posZ);
+//											direction = direction.normalize();
+//
+//											float yaw = 180F * (float)((direction.xCoord != 0 ? Math.atan(direction.zCoord / direction.xCoord) : 0) / Math.PI);
+//											float pitch = (float)direction.yCoord * 90F;
+//
+//											//TODO fix
+//
+//											player.setLocationAndAngles(player.posX, player.posY, player.posZ, yaw, pitch);
+//										}
 									}
 								}
 							}
@@ -253,7 +251,7 @@ public class LivingHurtHandler extends CustomArmorEventHandler
 							}
 						}
 					}
-					else if(stack.getItem() instanceof NecromancerStaff)
+					/*if(stack.getItem() instanceof NecromancerStaff)
 					{
 						if(elb instanceof EntityAnimal)
 						{
@@ -266,7 +264,7 @@ public class LivingHurtHandler extends CustomArmorEventHandler
 							if(!player.capabilities.isCreativeMode)
 								stack.getTagCompound().setInteger("charge", Math.min(stack.getTagCompound().getInteger("charge")+5, NecromancerStaff.getMaxCharges(stack)));
 						}
-					}
+					}*/
 				}
 			}
 		}

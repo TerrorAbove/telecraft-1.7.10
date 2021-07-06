@@ -25,6 +25,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChunkCoordinates;
@@ -37,7 +39,7 @@ import net.minecraft.world.World;
 public class BladeOfTeleportation extends ItemSword
 {
 	public static final int ATTACK_COOLDOWN = 10;//cooldown for the offensive teleport in seconds
-	public static final int BLOCK_COOLDOWN = 2;//cooldown for the defensive teleport in seconds
+	//public static final int BLOCK_COOLDOWN = 2;//cooldown for the defensive teleport in seconds
 	
 	private IIcon[] icons;
 
@@ -65,6 +67,11 @@ public class BladeOfTeleportation extends ItemSword
 	public IIcon getIconIndex(ItemStack stack)
 	{
 		return icons[getCooldownForStack(stack)];
+	}
+	
+	public EnumAction getItemUseAction(ItemStack stack)
+	{
+		return EnumAction.none;
 	}
 
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b)
@@ -103,7 +110,7 @@ public class BladeOfTeleportation extends ItemSword
 			comp = stack.getTagCompound();
 		
 		comp.setLong("last_off_teleport", System.currentTimeMillis());
-		comp.setLong("last_def_teleport", System.currentTimeMillis());
+		//comp.setLong("last_def_teleport", System.currentTimeMillis());
 		comp.setInteger("last_target_id", -1);
 		stack.setTagCompound(comp);
 	}
@@ -130,7 +137,6 @@ public class BladeOfTeleportation extends ItemSword
 						stack.getTagCompound().setLong("last_off_teleport", System.currentTimeMillis());
 					*/
 					
-					//TODO send currentTimeMillis to server and check if not too much time has elapsed there
 					TeleCraft.wrapper.sendToServer(new BladeOfTeleportationPacket(target.getEntityId(), System.currentTimeMillis()));
 				}
 			}
@@ -138,7 +144,37 @@ public class BladeOfTeleportation extends ItemSword
 		return false;
 	}
 	
-	public static boolean canTeleportAttacker(EntityPlayer p)
+	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer p)
+	{
+		NBTTagCompound c = stack.getTagCompound();
+		
+		if(!world.isRemote && c != null && c.hasKey("prevDim"))
+		{
+			try
+			{
+				float prevX = c.getFloat("prevX");
+				float prevY = c.getFloat("prevY");
+				float prevZ = c.getFloat("prevZ");
+				float prevDim = c.getFloat("prevDim");
+				
+				long last_tp = c.getLong("prevLocSetTime");
+				
+				//TODO distance check also?
+				
+				if(p.worldObj.provider.dimensionId == prevDim && System.currentTimeMillis() - last_tp < 10000L)
+				{
+					p.setPositionAndUpdate(prevX, prevY, prevZ);
+				}
+				
+				c.removeTag("prevDim");
+				stack.setTagCompound(c);
+			}
+			catch(Exception ex) {}
+		}
+		return stack;
+	}
+	
+	/*public static boolean canTeleportAttacker(EntityPlayer p)
 	{
 		if(p == null || p.getHeldItem() == null || !(p.getHeldItem().getItem() instanceof BladeOfTeleportation))
 			return false;
@@ -163,7 +199,7 @@ public class BladeOfTeleportation extends ItemSword
 			return true;
 		}
 		return false;
-	}
+	}*/
 	
 	public static int getCooldownForStack(ItemStack stack)
 	{
@@ -177,6 +213,23 @@ public class BladeOfTeleportation extends ItemSword
 			catch(Exception e) {}
 		}
 		return 0;
+	}
+	
+	public static boolean setCooldownForStack(ItemStack stack, int seconds)
+	{
+		if(stack != null)
+		{
+			if(stack.getTagCompound() == null)
+				stack.setTagCompound(new NBTTagCompound());
+			
+			try
+			{
+				stack.getTagCompound().setLong("last_off_teleport", System.currentTimeMillis() - 1L - (ATTACK_COOLDOWN - seconds) * 1000L);
+				return true;
+			}
+			catch(Exception e) {}
+		}
+		return false;
 	}
 	
 	public static int getMaxOffDistForStack(ItemStack stack)

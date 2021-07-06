@@ -1,5 +1,5 @@
 @echo off
 title Assembling...
 start ~runClient.bat
-gradlew assemble
+gradlew assemble --offline
 pause

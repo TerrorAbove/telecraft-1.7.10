@@ -345,7 +345,7 @@ public class TeleCraft
 
 		//Every block/item registered below this point is non-teleport
 
-		GameRegistry.registerBlock(landMine, "landMine");
+		/*GameRegistry.registerBlock(landMine, "landMine");
 		GameRegistry.registerBlock(riggedChest, "personalChest");
 		GameRegistry.registerBlock(bedrock_pressure_plate, "pressurePlateBedrock");
 		GameRegistry.registerBlock(bedrock_door_block, "doorBedrock");
@@ -363,7 +363,7 @@ public class TeleCraft
 		GameRegistry.registerItem(padlock_key, "padlockKey");
 		GameRegistry.registerItem(padlock_casing, "padlockCasing");
 		GameRegistry.registerItem(padlock_shackle, "padlockShackle");
-		GameRegistry.registerItem(iron_nugget, "ironNugget");
+		GameRegistry.registerItem(iron_nugget, "ironNugget");*/
 		GameRegistry.registerItem(superBucketEmpty, "superBucketEmpty");
 		GameRegistry.registerItem(superBucketWater, "superBucketWater");
 		GameRegistry.registerItem(superBucketLava, "superBucketLava");
@@ -377,28 +377,27 @@ public class TeleCraft
 		GameRegistry.registerItem(waterBucketExchanger, "superBucketExchangerWater");
 		GameRegistry.registerItem(lavaBucketExchanger, "superBucketExchangerLava");
 
-		GameRegistry.registerTileEntity(TileEntityRiggedChest.class, "tileEntityRiggedChest");
+		//GameRegistry.registerTileEntity(TileEntityRiggedChest.class, "tileEntityRiggedChest");
 		GameRegistry.registerTileEntity(TileEntityTelePlate.class, "tileEntityTCTeleportPlate");
 
 		EntityRegistry.registerGlobalEntityID(EntityGrappleHook.class, "entityGrappleHook", EntityRegistry.findGlobalUniqueEntityId());
-		EntityRegistry.registerGlobalEntityID(EntityLandMinePrimed.class, "landMinePrimed", EntityRegistry.findGlobalUniqueEntityId());
-		EntityRegistry.registerGlobalEntityID(ZombieMinion.class, "zombieMinion", EntityRegistry.findGlobalUniqueEntityId());
+		//EntityRegistry.registerGlobalEntityID(EntityLandMinePrimed.class, "landMinePrimed", EntityRegistry.findGlobalUniqueEntityId());
+		//EntityRegistry.registerGlobalEntityID(ZombieMinion.class, "zombieMinion", EntityRegistry.findGlobalUniqueEntityId());
 		
 		//Start of event handling
 		//NOTE: Adding an instance of a handler to the wrong bus will result in it being ignored!
 		MinecraftForge.EVENT_BUS.register(new LivingHurtHandler());
-		MinecraftForge.EVENT_BUS.register(new BlockEventsHandler());
+		//MinecraftForge.EVENT_BUS.register(new BlockEventsHandler());
 		
-		FMLCommonHandler.instance().bus().register(new PlayerTickHandler());
+		//FMLCommonHandler.instance().bus().register(new PlayerTickHandler());
 
 		wrapper = NetworkRegistry.INSTANCE.newSimpleChannel("TeleCraft channel");
 		wrapper.registerMessage(BladeOfTeleportationPacket.Handler.class, BladeOfTeleportationPacket.class, 0, Side.SERVER);
 		wrapper.registerMessage(EnderBucketPacket.Handler.class, EnderBucketPacket.class, 1, Side.SERVER);
-		wrapper.registerMessage(ZombieSpawnPacket.Handler.class, ZombieSpawnPacket.class, 2, Side.SERVER);
-		//wrapper.registerMessage(TeleporterPlatePacket.Handler.class, TeleporterPlatePacket.class, 3, Side.SERVER);
+		//wrapper.registerMessage(ZombieSpawnPacket.Handler.class, ZombieSpawnPacket.class, 2, Side.SERVER);
 		wrapper.registerMessage(EmergencyTeleportPacket.Handler.class, EmergencyTeleportPacket.class, 4, Side.SERVER);
-		wrapper.registerMessage(SetPinsPacket.Handler.class, SetPinsPacket.class, 5, Side.SERVER);
-		wrapper.registerMessage(PadlockRightClickedPacket.Handler.class, PadlockRightClickedPacket.class, 6, Side.SERVER);
+		//wrapper.registerMessage(SetPinsPacket.Handler.class, SetPinsPacket.class, 5, Side.SERVER);
+		//wrapper.registerMessage(PadlockRightClickedPacket.Handler.class, PadlockRightClickedPacket.class, 6, Side.SERVER);
 		wrapper.registerMessage(GrapplePacket.Handler.class, GrapplePacket.class, 7, Side.SERVER);
 		wrapper.registerMessage(GrappleResponsePacket.Handler.class, GrappleResponsePacket.class, 8, Side.CLIENT);
 		
@@ -409,16 +408,17 @@ public class TeleCraft
 	public void load (FMLInitializationEvent event)
 	{
 		//NOTE: what appear to be "duplicates" are alternative recipes (unless they are accidently dupes lol)
-		GameRegistry.addRecipe(new ItemStack(unforgedWonderAlloy, 9), new Object[] {"IDI", "DGD", "IDI", 'G', Items.gold_ingot, 'I', Items.iron_ingot, 'D', Items.diamond});
-		GameRegistry.addRecipe(new ItemStack(unforgedWonderAlloy, 9), new Object[] {"DID", "IGI", "DID", 'G', Items.gold_ingot, 'I', Items.iron_ingot, 'D', Items.diamond});
-		GameRegistry.addRecipe(new ItemStack(armorOfFortitude), new Object[] {"W W", "WWW", "WWW", 'W', wonderIngot});
-		GameRegistry.addRecipe(new ItemStack(woodenLifePreserver), new Object[] {"W W", "WWW", "WWW", 'W', Blocks.planks});//TODO change recipe to include wool and/or leather?
+		
+		//GameRegistry.addRecipe(new ItemStack(unforgedWonderAlloy, 9), new Object[] {"IDI", "DGD", "IDI", 'G', Items.gold_ingot, 'I', Items.iron_ingot, 'D', Items.diamond});
+		//GameRegistry.addRecipe(new ItemStack(unforgedWonderAlloy, 9), new Object[] {"DID", "IGI", "DID", 'G', Items.gold_ingot, 'I', Items.iron_ingot, 'D', Items.diamond});
+		//GameRegistry.addRecipe(new ItemStack(armorOfFortitude), new Object[] {"W W", "WWW", "WWW", 'W', wonderIngot});
+		//GameRegistry.addRecipe(new ItemStack(woodenLifePreserver), new Object[] {"W W", "WWW", "WWW", 'W', Blocks.planks});//TODO change recipe to include wool and/or leather?
 		GameRegistry.addRecipe(new ItemStack(wooden_teleporter, 16), new Object[] {"#E#", '#', Blocks.planks, 'E', Items.ender_pearl});
 		GameRegistry.addRecipe(new ItemStack(stone_teleporter, 8), new Object[] {"#E#", '#', Blocks.stone, 'E', Items.ender_pearl});
 		GameRegistry.addRecipe(new ItemStack(iron_teleporter, 4), new Object[] {"#E#", '#', Items.iron_ingot, 'E', Items.ender_pearl});
 		GameRegistry.addRecipe(new ItemStack(golden_teleporter, 2), new Object[] {"#E#", '#', Items.gold_ingot, 'E', Items.ender_pearl});
 		GameRegistry.addRecipe(new ItemStack(diamond_teleporter, 2), new Object[] {"#E#", '#', Items.diamond, 'E', Items.ender_pearl});
-		GameRegistry.addRecipe(new ItemStack(riggedChest), new Object[] {"###", "#T#", "###", '#', Blocks.planks, 'T', Items.name_tag});
+		//GameRegistry.addRecipe(new ItemStack(riggedChest), new Object[] {"###", "#T#", "###", '#', Blocks.planks, 'T', Items.name_tag});
 		GameRegistry.addRecipe(new ItemStack(bladeOfTeleportation), new Object[] {"OPO", "PDP", "OPO", 'O', Blocks.obsidian, 'P', Items.ender_pearl, 'D', Items.diamond_sword});
 		GameRegistry.addRecipe(new ItemStack(bladeOfTeleportation), new Object[] {"POP", "ODO", "POP", 'O', Blocks.obsidian, 'P', Items.ender_pearl, 'D', Items.diamond_sword});
 		GameRegistry.addShapedRecipe(new ItemStack(enderBucketEmpty), new Object[] {"IEI", " I ", 'I', Items.iron_ingot, 'E', Items.ender_eye});
@@ -464,10 +464,10 @@ public class TeleCraft
 		GameRegistry.addShapedRecipe(new ItemStack(lavaBucketExchanger), new Object[] {"EBE", 'E', Items.emerald, 'B', Items.lava_bucket});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(completeGrapple), grappleHook, grappleLauncher, strongRope);
-		GameRegistry.addShapelessRecipe(new ItemStack(iron_nugget, 9), Items.iron_ingot);
+		//GameRegistry.addShapelessRecipe(new ItemStack(iron_nugget, 9), Items.iron_ingot);
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.bucket, 9), superBucketEmpty);
 		GameRegistry.addShapelessRecipe(new ItemStack(enderBucketEmpty, 9), superEnderBucketEmpty);
-		GameRegistry.addRecipe(new ItemStack(Items.iron_ingot), "###", "###", "###", '#', iron_nugget);
+		//GameRegistry.addRecipe(new ItemStack(Items.iron_ingot), "###", "###", "###", '#', iron_nugget);
 		GameRegistry.addRecipe(new ItemStack(superBucketEmpty), "###", "###", "###", '#', Items.bucket);
 		GameRegistry.addRecipe(new ItemStack(superEnderBucketEmpty), "###", "###", "###", '#', enderBucketEmpty);
 		//GameRegistry.addRecipe(CustomShapelessRecipe.getRecipeForItemDuplicates(new ItemStack(superBucketWater), Items.water_bucket, 9));
@@ -480,7 +480,7 @@ public class TeleCraft
 		
 		//compatability code for certain mods' Iron Nuggets... (includes our own iron nugget)
 		//railcraft, flaxbeard's steamcraft, tinker's construct, thaumcraft, thermal foundation
-		final Item[] ironNuggets = new Item[] {
+		/*final Item[] ironNuggets = new Item[] {
 			GameRegistry.findItem("railcraft", "item.railcraft.nugget.iron"),
 			GameRegistry.findItem("steamcraft", "item.steamcraft:nugget.2"),
 			GameRegistry.findItem("tconstruct", "item.tconstruct.Materials.IronNugget"),
@@ -505,23 +505,25 @@ public class TeleCraft
 				GameRegistry.addRecipe(new ItemStack(padlock_key), "  n", "nn ", "n n", 'n', nugget);
 				GameRegistry.addRecipe(new ItemStack(padlock_key), "n n", " nn", "n  ", 'n', nugget);//TODO sensible key recipes
 			}
-		}
+		}*/
 
+		/*
 		List l = new ArrayList();
 		l.add(new ItemStack(Items.iron_ingot));
 		l.add(new ItemStack(padlock_key));
 		
 		GameRegistry.addRecipe(new CustomShapelessRecipe(new ItemStack(padlock_key, 2), l));
 		GameRegistry.addRecipe(new CustomShapedRecipe(1, 3, new ItemStack[] {new ItemStack(padlock_shackle), new ItemStack(padlock_casing), new ItemStack(padlock_key)}, new ItemStack(padlock)));
+		*/
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(landMine, 6), new Object[] {Blocks.wooden_pressure_plate, Blocks.tnt, Blocks.glass});
+		//GameRegistry.addShapelessRecipe(new ItemStack(landMine, 6), new Object[] {Blocks.wooden_pressure_plate, Blocks.tnt, Blocks.glass});
 		GameRegistry.addShapelessRecipe(new ItemStack(enderBucketEmpty), new Object[] {Items.ender_eye, Items.bucket});
 		GameRegistry.addShapelessRecipe(new ItemStack(enderBucketWater), new Object[] {Items.ender_eye, Items.water_bucket});
 		GameRegistry.addShapelessRecipe(new ItemStack(enderBucketLava), new Object[] {Items.ender_eye, Items.lava_bucket});
 		GameRegistry.addShapelessRecipe(new ItemStack(enderBucketMilk), new Object[] {Items.ender_eye, Items.milk_bucket});
 		GameRegistry.addShapelessRecipe(new ItemStack(emergencyStackableTeleport, 4), new Object[] {Items.ender_pearl, Blocks.stone_button, Blocks.stone_slab});
 
-		GameRegistry.addSmelting(new ItemStack(unforgedWonderAlloy), new ItemStack(wonderIngot), 10.0F);
+		//GameRegistry.addSmelting(new ItemStack(unforgedWonderAlloy), new ItemStack(wonderIngot), 10.0F);
 		
 		RecipeSorter.register("customShapedRecipe", CustomShapedRecipe.class, Category.SHAPED, "");
 		RecipeSorter.register("customShapelessRecipe", CustomShapelessRecipe.class, Category.SHAPELESS, "");

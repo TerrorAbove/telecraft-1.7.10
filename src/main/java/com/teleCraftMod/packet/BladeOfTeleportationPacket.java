@@ -58,6 +58,9 @@ public class BladeOfTeleportationPacket implements IMessage
 				if(target == null || System.currentTimeMillis() - message.timeSent > 3000)
 					return null;
 				
+				if(held.getTagCompound() == null)
+					held.setTagCompound(new NBTTagCompound());
+				
 				Vec3 vec = Vec3.createVectorHelper((int)(target.posX - player.posX), (int)(target.posY - player.posY), (int)(target.posZ - player.posZ));
 				
 				//possible TODO: check for weapon reach enchantment?
@@ -97,6 +100,11 @@ public class BladeOfTeleportationPacket implements IMessage
 							&& (!middle.getMaterial().blocksMovement() && middle.getMaterial() != Material.lava)
 							&&  upper.getMaterial() == Material.air)
 						{
+							held.getTagCompound().setFloat("prevX", (float) player.posX);
+							held.getTagCompound().setFloat("prevY", (float) player.posY);
+							held.getTagCompound().setFloat("prevZ", (float) player.posZ);
+							held.getTagCompound().setFloat("prevDim", (float) player.worldObj.provider.dimensionId);
+							held.getTagCompound().setLong("prevLocSetTime", System.currentTimeMillis());
 							
 							player.setPositionAndUpdate(x, y, z);
 							
@@ -104,14 +112,11 @@ public class BladeOfTeleportationPacket implements IMessage
 							if(cooldown == 0)
 								player.addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 33, 0, false));
 							
-							if(held.getTagCompound() == null)
-								held.setTagCompound(new NBTTagCompound());
-							
 							if(!player.capabilities.isCreativeMode)
 							{
 								held.getTagCompound().setLong("last_off_teleport", System.currentTimeMillis());
 								held.getTagCompound().setInteger("last_target_id", target.getEntityId());
-								held.damageItem((int)(DIST / 2), player);
+								held.damageItem((int)DIST, player);
 							}
 							
 							break;
